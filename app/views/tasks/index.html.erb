@@ -1,0 +1,13 @@
+<h1>All tasks</h1>
+  <%= link_to "Add a task", new_task_path %>
+
+<% @tasks.each do |task| %>
+  <h2><%= link_to task.title, task_path(task) %></h2>
+
+  <p>
+<%= check_box_tag 'task_ids[]', task.id %>
+    <%= task.completed %></p>
+
+<%= link_to "Delete Task", task_path(task), method: :delete %>
+
+<% end %>
