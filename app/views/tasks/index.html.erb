@@ -8,6 +8,6 @@
 <%= check_box_tag 'task_ids[]', task.id %>
     <%= task.completed %></p>
 
-<%= link_to "Delete Task", task_path(task), method: :delete %>
+<%= link_to "Delete Task", task_path(task), method: :delete, data: {:confirm => 'are you sure?'} %>
 
 <% end %>
